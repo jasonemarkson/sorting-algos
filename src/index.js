@@ -130,6 +130,70 @@ const array = [187, 77, 21, 8, 345, 43, 32, 5643, 63, 123, 43, 55, 9, 423, 87]
 //     return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]
 // }
 
+// already sorted arrays
+// const merge = (leftArr, rightArr) => {
+//     const output = [];
+//     let leftIndex = 0; 
+//     let rightIndex = 0;
 
-console.log("Array", array)
-console.log("QuickSort", quickSort(array))
+//     while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+//         const leftEl = leftArr[leftIndex]
+//         const rightEl = rightArr[rightIndex]
+
+//         if (leftEl < rightEl) {
+//             output.push(leftEl)
+//             leftIndex++
+//         } else {
+//             output.push(rightEl)
+//             rightIndex++
+//         }
+//     }
+
+//     return [...output, ...leftArr.slice(leftIndex), ...rightArr.slice(rightIndex)]
+
+// }
+
+// const mergeSort = array => {
+//     // with recursive functions we need to establish an edge case
+//     if (array.length <= 1) {
+//         return array
+//     }
+
+//     const middleIndex = Math.floor(array.length / 2)
+//     const leftArr = array.slice(0, middleIndex);
+//     const rightArr = array.slice(middleIndex);
+
+//     return merge(
+//     // we're recursively calling the mergeSort function here which sorts these arrays - by doing this we know that we're passing in sorted arrays to the merge helper function
+//         mergeSort(leftArr),
+//         mergeSort(rightArr)
+//     );
+
+// }
+
+
+const merge = (leftArr, rightArr) => {
+    
+}
+
+
+const mergeSort = array => {
+    // with any recursive function, we must address the edge cases
+    if (array.length <= 1) {
+        return array
+    }
+    
+    const middleIndex = Math.floor(array.length / 2)
+    const leftArr = array.slice(0, middleIndex)
+    const rightArr = array.slice(middleIndex)
+
+    return merge(
+        mergeSort(leftArr),
+        mergeSort(rightArr)
+    )
+
+}
+
+
+// console.log("Array", ...array)
+console.log("mergeSort", mergeSort(array))
