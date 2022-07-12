@@ -172,28 +172,5 @@ const array = [187, 77, 21, 8, 345, 43, 32, 5643, 63, 123, 43, 55, 9, 423, 87]
 // }
 
 
-const merge = (leftArr, rightArr) => {
-    
-}
-
-
-const mergeSort = array => {
-    // with any recursive function, we must address the edge cases
-    if (array.length <= 1) {
-        return array
-    }
-    
-    const middleIndex = Math.floor(array.length / 2)
-    const leftArr = array.slice(0, middleIndex)
-    const rightArr = array.slice(middleIndex)
-
-    return merge(
-        mergeSort(leftArr),
-        mergeSort(rightArr)
-    )
-
-}
-
-
 // console.log("Array", ...array)
 console.log("mergeSort", mergeSort(array))
